@@ -12,7 +12,6 @@ def main():
     request = requests.get('https://viacep.com.br/ws/{}/json/'.format(cep))
     data = request.json()
 
-    #print(data)
     if 'erro' not in data:
         print('CEP:{}'.format(data['cep']))
         print('Rua:{}'.format(data['logradouro']))
