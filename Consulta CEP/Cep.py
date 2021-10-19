@@ -18,12 +18,14 @@ def main():
             nome_Rua = data['logradouro']
             nome_Bairro = data['bairro']
             num_DDD = data['ddd']
+            uf = data['uf']
 
             info = f'''
             CEP: {num_CEP}
             Rua : {nome_Rua}
             Bairro : {nome_Bairro}
             DDD : {num_DDD}
+            Estado: {uf}
             '''
 
             info_screen["text"] = info
