@@ -1,6 +1,7 @@
 import requests
 from tkinter import *
 from tkinter import simpledialog
+import win32com.client as win32
 
 def main():
     while True:
@@ -36,10 +37,7 @@ def main():
             Erro = print('CEP inexistente na base, favor confirmar o número')
             erro_screen["text"] = Erro
 
-        continuar = input('Deseja consultar outro CEP ?\n 1 Para SIM\n2 Para SAIR\n')
-        if continuar != 1:
-            print("Obrigado, até a próxima !")
-            break
+        break
 
 window = Tk()
 
@@ -50,7 +48,7 @@ main_screen.grid(column=0, row=0)
 sec_screen = Label(window, text="Insira o CEP desejado:")
 sec_screen.grid(column=0, row=1)
 
-input_cep = Entry(window, width="8")
+input_cep = Entry(window, width="10")
 input_cep.grid(column=1, row=1)
 
 Find_CEP = Button(window, text="BUSCAR", command=main)
