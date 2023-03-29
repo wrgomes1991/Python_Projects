@@ -5,7 +5,7 @@ import win32com.client as win32
 
 def main():
     while True:
-
+        erro_screen["text"] = ""
         if len(input_cep.get()) != 8:
             erro_screen["text"] = "CEP não contém 8 caracteres, confirme o número e tente novamente"
             break
