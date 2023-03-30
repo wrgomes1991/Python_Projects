@@ -29,7 +29,8 @@ def main():
             Estado: {uf}
             '''
 
-            info_screen["text"] = info
+            info_text.delete('1.0', END)
+            info_text.insert(END, info)
 
 
         else:
@@ -57,8 +58,8 @@ Find_CEP.grid(column=2, row=1)
 CEP = Label(window, text="")
 CEP.grid(column=2, row=2)
 
-info_screen = Label(window, text="")
-info_screen.grid(column=2, row=3)
+info_text = Text(window, width=80, height=10)
+info_text.grid(column=2, row=3)
 
 erro_screen = Label(window, text="")
 erro_screen.grid(column=2, row=4)
