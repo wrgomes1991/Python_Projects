@@ -1,0 +1,76 @@
+Bitcoin Price Tracker
+Este script Python utiliza a API da CoinMarketCap para obter o preço atual do Bitcoin e calcular sua variação em 2 minutos. A API Key é necessária para autenticar a solicitação, e a variável de ambiente deve ser configurada para que o script funcione corretamente.
+
+Pré-requisitos
+Antes de executar o script, você precisa garantir que tenha as bibliotecas necessárias instaladas e que a variável de ambiente da chave da API esteja configurada.
+
+Instalando as dependências
+Este script usa a biblioteca requests para fazer as requisições HTTP à API da CoinMarketCap. Para instalar as dependências, siga os passos abaixo:
+
+Crie um ambiente virtual (opcional, mas recomendado):
+
+bash
+Copiar código
+python -m venv venv
+Ative o ambiente virtual:
+
+No Windows:
+bash
+Copiar código
+.\venv\Scripts\activate
+No Linux/macOS:
+bash
+Copiar código
+source venv/bin/activate
+Instale a biblioteca requests:
+
+bash
+Copiar código
+pip install requests
+Configurando a API Key
+A chave da API da CoinMarketCap é necessária para fazer as requisições à API. Siga os passos abaixo para configurá-la:
+
+Obtenha sua chave de API da CoinMarketCap:
+
+Acesse o site da CoinMarketCap e crie uma conta.
+Após o login, você obterá uma chave de API (API Key).
+Configure a variável de ambiente API_KEY:
+
+No Linux/macOS: Você pode exportar a variável diretamente no terminal:
+
+bash
+Copiar código
+export API_KEY="sua-chave-da-api-aqui"
+Para garantir que a variável de ambiente seja carregada automaticamente, adicione a linha acima ao seu arquivo ~/.bashrc ou ~/.zshrc.
+
+No Windows: No PowerShell, você pode definir a variável da seguinte maneira:
+
+powershell
+Copiar código
+$env:API_KEY="sua-chave-da-api-aqui"
+Para definir permanentemente, você pode usar as configurações do sistema ou definir isso em um arquivo de inicialização, como o $PROFILE do PowerShell.
+
+Como Rodar o Script
+Depois de configurar o ambiente e a API Key, você pode rodar o script da seguinte maneira:
+
+Salve o código Python em um arquivo, por exemplo bitcoin_price_tracker.py.
+
+Execute o script:
+
+bash
+Copiar código
+python bitcoin_price_tracker.py
+O script irá buscar o preço atual do Bitcoin e depois calcular a variação após 2 minutos, exibindo o preço inicial, o preço após 2 minutos e a variação entre eles.
+
+Exemplo de Saída
+bash
+Copiar código
+O preço inicial do Bitcoin é: $30000.00
+O preço do Bitcoin após 2 minutos é: $30050.00
+A variação do preço do Bitcoin em 2 minutos foi: $50.00
+Explicação do Código
+API_KEY: A chave da API da CoinMarketCap é usada para autenticar as requisições.
+requests.get(): Faz a requisição à API para obter os dados mais recentes sobre o Bitcoin.
+get_bitcoin_price(): Função que retorna o preço atual do Bitcoin em USD.
+time.sleep(160): O script aguarda 160 segundos (aproximadamente 2 minutos) antes de fazer a segunda requisição para comparar o preço.
+Cálculo da variação: Após 2 minutos, o preço atual do Bitcoin é comparado ao preço inicial, e a variação é calculada e exibida.
